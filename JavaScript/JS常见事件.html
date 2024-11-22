@@ -1,0 +1,42 @@
+<!--
+一个元素可以绑定多个事件
+一个事件也可以绑定多个函数
+1.鼠标事件
+2.键盘事件
+3.表单事件
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function fun1(){
+            //alert("单击了")
+            console.log("单击了")
+        }
+        function fun2() {
+            //alert("双击了")
+            console.log("单击了2")
+        }
+        function fun3(){
+            console.log("双击了")
+        }
+        function fun4(){
+            console.log("鼠标移动了")
+        }
+        function fun5(){
+            console.log("鼠标悬停了")
+        }
+        function fun6(){
+            console.log("鼠标离开了")
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="按钮" onclick="fun1(),fun2()" ondblclick="fun3()">
+    <br>
+    <img src="../jpg/屏幕截图 2024-06-30 225223.png" alt="一张图片" onmouseover="fun4()" onmousemove="fun5()" onmouseleave="fun6()">
+    <input type="text" onkeydown="console.log('按下了')" onkeyup="console.log('松开了')">
+</html>

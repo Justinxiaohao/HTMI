@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function fun1(){
+            var li=document.createElement("li");
+            li.id="cs"
+            li.innerText="长沙";
+            document.getElementById("list").appendChild(li);
+        }
+        function fun2(){
+            var li=document.createElement("li");
+            li.id="wh"
+            li.innerText="武汉";
+            document.getElementById("sz").insertBefore(li,document.getElementById("sz"));
+        }
+        function fun3(){
+            var li=document.createElement("li");
+            li.id="xm"
+            li.innerText="厦门";
+            document.getElementById("sz").parentNode.replaceChild(li,document.getElementById("sz"));
+        }
+        //删除
+        function fun4(){
+            document.getElementById("sz").parentNode.removeChild(document.getElementById("sz"));
+        }
+        function fun5(){
+            document.getElementById("list").innerHTML="";
+        }
+    </script>
+</head>
+<body>
+    <ul id="list">
+        <li id="bj">北京</li>
+        <li id="sh">上海</li>
+        <li id="gz">广州</li>
+        <li id="sz">深圳</li>
+    </ul>
+    <hr>
+    <input type="button" value="增加长沙" onclick="fun1()"/>
+    <input type="button" value="在深圳之前增加武汉" onclick="fun2()" />
+    <input type="button" value="把深圳替换成厦门" onclick="fun3()" />
+    <input type="button" value="把深圳删除" onclick="fun4()" />
+    <input type="button" value="清空所有城市列表" onclick="fun5()" />
+</body>
+</html>

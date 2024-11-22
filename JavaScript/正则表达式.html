@@ -1,0 +1,45 @@
+<!--
+正则表达式是描述字符模式的对象，正则表达式对于字符串模式匹配以及检索替换，是对字符串模式匹配的强大工具
+语法
+var patt=/pattern/modifiers
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    //定义一个正则表达式
+        var reg=/o/
+        var str='hello world'
+        console.log(reg.test(str))//输出为true
+
+        //匹配
+        var reg=/o/i
+        var str='hello world'
+        var result=str.match(reg)
+        console.log(result)
+
+        //替换字符串中的字母，g是匹配全局的意思，i是忽略大小写
+        //var reg= /o/gi
+        //var str='hello world'
+        //var newStr =str.replace(reg,'b')
+        //console.log(newStr)
+        
+        var str1='java love me'
+        var str2='i love java'
+        var reg1=/^java/i
+        var reg2=/love$/i
+
+        //校验用户名是否合法：6-10位，字母数字下划线，字母开头不能以数字开头
+        var str='asdfqwer'
+        var reg=/^[a-zA-Z][a-zA-Z0-9_]{5,9}$/
+        
+        
+
+    </script>
+</head>
+<body>
+</body>
+</html>

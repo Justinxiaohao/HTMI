@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    /*创建对象方式1
+     new Object()
+     方式二
+     {属性名：属性值，..........函数名:function(){
+     }}
+     */
+    var person=new Object();
+     person.name="张三";
+     person.age=10;
+     person.eat=function(food){
+        console.log(this.age+"岁的"+this.name+"正在吃"+food)
+     }
+     person.eat("火锅");
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

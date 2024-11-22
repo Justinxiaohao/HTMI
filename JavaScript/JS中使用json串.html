@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //var personStr='{"属性名":"属性值","属性名"：{    }，属性名：["","",""],"属性名"：[{},{},{}]}' 
+        var personStr='{"name":"张三","dog":{"dame":"小曾"},"loveSingers":["小王","小李"],"Friends":[{"fname":"小明"},{"fname":"小赵"}]}'
+        //通过json.parse()可以将json串转换成对象
+        var person =JSON.parse(personStr)
+        console.log(personStr)
+        var personStr2 =JSON.stringify(person)
+        console.log(personStr2)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function fun1(){
+            var el = document.getElementById("in1");
+            el.value="789";//操作元素的属性
+            console.log(el.value);
+        }
+        function fun2(){
+            var el = document.getElementById("in1");
+            el.style.color="blue";//操作元素的样式
+            console.log(el.style.color);
+            el.style.fontSize="30px";//操作元素的样式需要改成驼峰命名
+        }
+        function fun3(){
+            var el = document.getElementById("d01");
+            el.innerText="world";//操作元素的内容
+            console.log(el.innerText);
+            el.innerHTML="<b>world</b>";//操作元素的内容
+            console.log(el.innerHTML);
+        }
+    </script>
+    <style>
+        #in1{
+            color:red;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" value="hello world" id="in1"/> 
+    <hr>
+    <input type="button" value="点击按钮后hello world变成你好" onclick="fun1()"/>
+    <input type="button" value="点击按钮后hello world变成蓝色" onclick="fun2()"/>
+    <hr>
+    <div id="d01" >hello</div>
+    <input type="button" value="点击按钮后hello变成world" onclick="fun3()">
+</body>
+</html>

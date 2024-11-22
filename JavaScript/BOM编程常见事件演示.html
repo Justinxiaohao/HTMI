@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function fun1(){
+            window.alert("hello world");
+        }
+        function fun2(){
+            window.confirm("hello world");
+        }
+        function fun3(){
+            window.prompt("hello world");
+        }
+        function fun4(){
+            window.setTimeout("window.alert('hello world')",2000);//延迟2秒执行弹窗
+        }
+    </script>
+</script>
+</head>
+<body>
+     <button onclick="fun1()"></button>
+    <button onclick="fun2()"></button>
+    <button onclick="fun3()"></button>
+    <button onclick="fun4()">弹窗</button>
+</body>
+</html>

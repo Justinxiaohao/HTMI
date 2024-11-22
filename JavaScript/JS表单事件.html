@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+          function testFocus() {
+                console.log("获得焦点")
+            }
+            function testblur() {
+                console.log("失去焦点")
+            }
+            function testChange() {
+                console.log("内容改变")
+            }
+    </script>   
+
+</head>
+<body>
+    <form
+    action="http://www.baidu.com"
+    method="get"
+    >
+        <input type="text" name="username" placeholder="用户名" onfocus="testFocus()" onblur="testblur()" onchange="testChange()">
+        <input type="password" name="password" placeholder="密码">
+        <input type="submit" value="登录">
+        <input type="reset" value="重置">
+        <br>
+        选择籍贯:<select onchange="console.log('你选择了'+this.value)">
+            <option>北京</option>
+            <option>上海</option>
+            <option>广州</option>
+                
+        </select>
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!--
+1.函数声明的语法
+function 函数名(){
+}
+var 函数名=function(){
+}
+2.没有void 直接return即可
+3.没有异常列表
+4.调用方法实参和形参数量可以不一致
+5.函数可以作为参数传递给另一个方法
+--><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+            var sum=function (a,b){
+            return a+b;
+    }
+        function add(getSum){
+            return getSum(20,30);
+        }
+            var result=add(sum)
+            console.log(result);
+    </script>
+</head>
+</body>
+</html>
