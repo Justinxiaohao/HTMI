@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>酒店后台管理系统商家端</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background-color: #bf4dcf;
+            color: white;
+            padding: 0px;
+            top: 0;
+            z-index: 10;
+            padding-bottom: 26px;
+        }
+
+        .headh1 {
+            margin: auto;
+            font-size: 20px;
+            margin-left: 100px;
+            padding-top: 15px;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            height: calc(100vh - 70px);
+        }
+
+        .sidebar {
+            width: 15%;
+            background-color: #f2f2f2;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar ul li {
+            margin: 10px 0;
+            margin-bottom: 30px;
+            margin-left: 20px;
+        }
+
+        .sidebar ul li input {
+            display: none;
+        }
+
+        .sidebar ul li label {
+            display: block;
+            padding: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .sidebar ul li label:hover {
+            background-color: #e0e0e0;
+            color: #000;
+        }
+
+        .sidebar ul li input:checked+label {
+            background-color: #d3d3d3;
+            color: #333;
+            border-radius: 4px;
+            font-weight: bold;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        main {
+            flex: 1;
+            padding: 20px;
+            background-color: #ffffff;
+            box-sizing: border-box;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .search-bar {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .search-bar input {
+            padding: 8px;
+            font-size: 14px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .search-bar button {
+            padding: 8px 12px;
+            font-size: 14px;
+            cursor: pointer;
+            margin-left: 5px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+
+        .search-bar button:hover {
+            background-color: #0056b3;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            text-align: center;
+            padding: 10px;
+        }
+
+        td {
+            font-size: 14px;
+        }
+
+        .green {
+            background-color: #d4edda;
+        }
+
+        .yellow {
+            background-color: #ece802;
+        }
+
+        .orange {
+            background-color: #f78c00;
+        }
+
+        .red {
+            background-color: #d61a29;
+        }
+
+        .blue {
+            background-color: #b3f6ed;
+        }
+
+        .highlight {
+            border: 2px solid blue !important;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 class="headh1">酒店后台管理系统商家端</h1>
+    </header>
+    <div class="container">
+        <nav class="sidebar">
+            <ul>
+                <li>
+                    <input type="radio" name="menu" id="menu1" checked>
+                    <label for="menu1">查看房间信息</label>
+                </li>
+                <li>
+                    <input type="radio" name="menu" id="menu2">
+                    <label for="menu2">查看用户评价</label>
+                </li>
+                <li>
+                    <input type="radio" name="menu" id="menu3">
+                    <label for="menu3">查看房间状态</label>
+                </li>
+                <li>
+                    <input type="radio" name="menu" id="menu4">
+                    <label for="menu4">查看订单</label>
+                </li>
+                <li>
+                    <input type="radio" name="menu" id="menu5">
+                    <label for="menu5">办理入住</label>
+                </li>
+            </ul>
+        </nav>
+        <main>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="房间类型搜索">
+                <button>搜索</button>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>房间地址</th>
+                        <th>房间类型</th>
+                        <th>房间号</th>
+                        <th>房间面积</th>
+                        <th>价格</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1号楼2层</td>
+                        <td>豪华单人间</td>
+                        <td>1201</td>
+                        <td>28</td>
+                        <td>¥200</td>
+                        <td><button onclick="editRoom(1)">修改</button></td>
+                    </tr>
+                    <tr>
+                        <td>2号楼3层</td>
+                        <td>豪华单人间</td>
+                        <td>2300</td>
+                        <td>28</td>
+                        <td>¥200</td>
+                        <td><button onclick="editRoom(2)">修改</button></td>
+                    </tr>
+                    <tr>
+                        <td>3号楼4层</td>
+                        <td>豪华大床房</td>
+                        <td>3402</td>
+                        <td>35</td>
+                        <td>¥300</td>
+                        <td><button onclick="editRoom(3)">修改</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </div>
+</body>
+
+</html>
